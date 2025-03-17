@@ -83,7 +83,7 @@ class MainAppState extends State<MainApp> with SimpleFrameAppState, FrameVisionA
     return GenerativeModel(
       model: 'gemini-2.0-pro-exp-02-05',
       apiKey: _apiKey,
-      // TODO systemInstruction: Content.system('system instructions...'),
+      tools: [Tool(codeExecution: CodeExecution())],
       safetySettings: [
         // note: safety settings are disabled because it tends to block regular queries citing safety.
         // Be nice and stay safe.
